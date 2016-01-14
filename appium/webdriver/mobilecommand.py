@@ -56,3 +56,4 @@ class MobileCommand(object):
     GET_SETTINGS = 'getSettings'
     UPDATE_SETTINGS = 'updateSettings'
     SET_LOCATION = 'setLocation'
+    TOUCH_ID = 'touchId'

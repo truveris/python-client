@@ -728,6 +728,18 @@ class WebDriver(webdriver.Remote):
         self.execute(Command.SET_LOCATION, data)
         return self
 
+    def touch_id(self, match):
+        """Send a touch id match or no_match event. iOS simulator only.
+
+        :Args:
+         - True if the simulated touch id is a match or False if not
+        """
+        data = {
+            'match': match,
+        }
+        self.execute(Command.TOUCH_ID, data)
+        return self
+
     def _addCommands(self):
         self.command_executor._commands[Command.CONTEXTS] = \
             ('GET', '/session/$sessionId/contexts')
@@ -810,3 +822,5 @@ class WebDriver(webdriver.Remote):
             ('POST', '/session/$sessionId/location')
         self.command_executor._commands[Command.LOCATION_IN_VIEW] = \
             ('GET', '/session/$sessionId/element/$id/location_in_view')
+        self.command_executor._commands[Command.TOUCH_ID] = \
+            ('POST', '/session/$sessionId/simulator/touuch_id')
