@@ -823,4 +823,4 @@ class WebDriver(webdriver.Remote):
         self.command_executor._commands[Command.LOCATION_IN_VIEW] = \
             ('GET', '/session/$sessionId/element/$id/location_in_view')
         self.command_executor._commands[Command.TOUCH_ID] = \
-            ('POST', '/session/$sessionId/simulator/touuch_id')
+            ('POST', '/session/$sessionId/simulator/touch_id')
